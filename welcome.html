@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Welcome to Movie Ticket Booking</h1>
+        </div>
+    </header>
+	<form action="new 1.php" method="post">
+    <main class="main-content">
+        <section class="movie-list">
+            <div class="movie-container">
+                <!-- Movie 1 -->
+                <div class="movie-card">
+                    <div class="movie-details">
+                        <h2 class="movie-title">Inception</h2>
+                        <p class="movie-genre"><strong>Genre:</strong> Science Fiction</p>
+                        <p class="movie-duration"><strong>Duration:</strong> 148 mins</p>
+                        <p class="movie-price"><strong>Price:</strong> $12.99</p>
+                        <a href="book.html?movie_id=2" class="book-button">Book Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Movie 2 -->
+                <div class="movie-card">
+                    <div class="movie-details">
+                        <h2 class="movie-title">Avatar</h2>
+                        <p class="movie-genre"><strong>Genre:</strong> Adventure</p>
+                        <p class="movie-duration"><strong>Duration:</strong> 162 mins</p>
+                        <p class="movie-price"><strong>Price:</strong> $14.99</p>
+                        <a href="book.html?movie_id=2" class="book-button">Book Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Movie 3 -->
+                <div class="movie-card">
+                    <div class="movie-details">
+                        <h2 class="movie-title">Avengers: Endgame</h2>
+                        <p class="movie-genre"><strong>Genre:</strong> Action</p>
+                        <p class="movie-duration"><strong>Duration:</strong> 181 mins</p>
+                        <p class="movie-price"><strong>Price:</strong> $15.99</p>
+                        <a href="book.html?movie_id=3" class="book-button">Book Tickets</a>
+                    </div>
+                </div>
+
+                <!-- Movie 4 -->
+                <div class="movie-card">
+                    <div class="movie-details">
+                        <h2 class="movie-title">Black Widow</h2>
+                        <p class="movie-genre"><strong>Genre:</strong> Action</p>
+                        <p class="movie-duration"><strong>Duration:</strong> 134 mins</p>
+                        <p class="movie-price"><strong>Price:</strong> $11.99</p>
+                        <a href="book.html?movie_id=4" class="book-button">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Movie Ticket Booking. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Form (should appear when a movie is selected) -->
+    <div class="booking-form">
+        <form action="book.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="seats">Number of Seats:</label>
+            <input type="number" id="seats" name="seats" required>
+
+            <label for="showtime">Showtime:</label>
+            <input type="datetime-local" id="showtime" name="showtime" required>
+
+            <input type="hidden" name="movie_id" value="<?php echo $_GET['movie_id']; ?>">
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</body>
+</html>
